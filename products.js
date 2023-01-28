@@ -1,5 +1,5 @@
 import { createApp } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
-import pagination from "./pagination.js";
+import pagination from "./components/pagination.js";
 
 let productModal = "";
 let delModal = "";
@@ -53,7 +53,7 @@ const app = createApp({
       axios
         .get(`${this.url}/api/${this.path}/admin/products/?page=${page}`)
         .then((res) => {
-          console.log(res.data);
+          // console.log(res.data);
           this.page = res.data.pagination;
           this.products = Object.values(res.data.products);
         })
